@@ -35,6 +35,9 @@ const Home: NextPage = () => {
             onChange={(e) => setForm({ ...form, content: e.target.value })}
             className="border-2 rounded border-gray-600 p-1"
           />
+          <button type="submit" className="bg-blue-500 text-white rounded p-1">
+            Adicionar +
+          </button>
         </form>
       </h1>
     </div>
