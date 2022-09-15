@@ -28,12 +28,21 @@ const Home: NextPage = () => {
     }
   }
 
+  const handleSubmit = async (data: FormData) => {
+    try {
+      create(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <h1 className="text-center font-bold text-2xl mt-4">
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            handleSubmit(form);
           }}
           className="w-auto min-w-[25%] max-w-min mx-auto space-y-6 flex flex-col items-stretch"
         >
