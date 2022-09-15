@@ -13,6 +13,21 @@ const Home: NextPage = () => {
     content: '',
     id: '',
   });
+
+  async function create(data: FormData) {
+    try {
+      fetch('http://localhost:3000/api/create', {
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      }).then(() => setForm({ title: '', content: '', id: '' }));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <h1 className="text-center font-bold text-2xl mt-4">
