@@ -31,13 +31,16 @@ const Home = ({ notes }: Notes) => {
 
   async function create(data: FormData) {
     try {
-      fetch('http://localhost:3000/api/create', {
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      }).then(() => {
+      fetch(
+        'https://nextjs-typescript-crud-8qrr5nxxu-lutefd.vercel.app/api/create',
+        {
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          method: 'POST',
+        }
+      ).then(() => {
         if (data.id) {
           deleteNote(data.id);
           setForm({ title: '', content: '', id: '' });
@@ -54,12 +57,15 @@ const Home = ({ notes }: Notes) => {
 
   async function deleteNote(id: string) {
     try {
-      fetch(`http://localhost:3000/api/note/${id}`, {
-        headers: {
-          'Content-type': 'application/json',
-        },
-        method: 'DELETE',
-      }).then(() => {
+      fetch(
+        `https://nextjs-typescript-crud-8qrr5nxxu-lutefd.vercel.app/api/note/${id}`,
+        {
+          headers: {
+            'Content-type': 'application/json',
+          },
+          method: 'DELETE',
+        }
+      ).then(() => {
         refreshData();
       });
     } catch (error) {
