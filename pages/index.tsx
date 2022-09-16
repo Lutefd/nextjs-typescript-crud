@@ -110,7 +110,7 @@ const Home = ({ notes }: Notes) => {
           </ul>
         </div>
       </div>
-      <h1 className="text-5xl font-bold text-center mt-5 mb-10"> Notas</h1>
+      <h1 className="text-5xl font-bold text-center mt-5 mb-10">Bugs</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -120,13 +120,13 @@ const Home = ({ notes }: Notes) => {
       >
         <input
           type="text"
-          placeholder="Title"
+          placeholder="Bug"
           value={form.title}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
           className="input input-bordered input-primary w-full max-w-s"
         />
         <textarea
-          placeholder="Content"
+          placeholder="Descrição do bug"
           value={form.content}
           onChange={(e) => setForm({ ...form, content: e.target.value })}
           className="textarea textarea-primary"
@@ -154,7 +154,7 @@ const Home = ({ notes }: Notes) => {
                   }
                   className="btn btn-outline btn-primary"
                 >
-                  editar
+                  Editar
                 </button>
                 <div className="p-1"></div>
                 <button
