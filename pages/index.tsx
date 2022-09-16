@@ -54,7 +54,7 @@ const Home = ({ notes }: Notes) => {
 
   async function deleteNote(id: string) {
     try {
-      fetch(`hhttps://nextjs-typescript-crud.vercel.app/api/note/${id}`, {
+      fetch(`https://nextjs-typescript-crud.vercel.app/api/note/${id}`, {
         headers: {
           'Content-type': 'application/json',
         },
