@@ -1,8 +1,7 @@
 import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { prisma } from '../lib/prisma';
-
 interface Notes {
   notes: {
     id: string;
@@ -15,6 +14,12 @@ interface FormData {
   title: string;
   content: string;
   id: string;
+}
+function documentTitle() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    document.title = 'Anota Bugs';
+  });
 }
 
 const Home = ({ notes }: Notes) => {
@@ -74,12 +79,12 @@ const Home = ({ notes }: Notes) => {
       console.log(error);
     }
   };
-
+  documentTitle();
   return (
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-xl">lunoTE</a>
+          <a className="btn btn-ghost normal-case text-xl">lubuGS</a>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal p-0">
