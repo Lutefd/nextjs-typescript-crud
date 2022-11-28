@@ -137,7 +137,7 @@ const Home = ({ notes }: Notes) => {
           className="textarea textarea-primary"
         />
         <button type="submit" className="btn btn-primary">
-          Adicionar +
+          Add +
         </button>
       </form>
       <div className="w-auto min-w-[40%] max-w-min mt-20 mx-auto space-y-6 flex flex-col items-stretch">
